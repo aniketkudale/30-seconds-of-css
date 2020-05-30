@@ -5,13 +5,15 @@ tags: animation,intermediate
 
 Creates a border animation on hover.
 
+- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.
+
 ```html
-<div class="button-border"><button class="button">Submit</button></div>
+<button class="animated-border-button">Submit</button>
 ```
 
 ```css
-.button {
-  background-color: #c47135;
+.animated-border-button {
+  background-color: #141414;
   border: none;
   color: #ffffff;
   outline: none;
@@ -19,41 +21,30 @@ Creates a border animation on hover.
   position: relative;
 }
 
-.button:before,
-.button:after {
+.animated-border-button:before,
+.animated-border-button:after {
   border: 0 solid transparent;
-  transition: all 0.25s;
+  transition: all 0.3s;
   content: '';
-  height: 24px;
+  height: 0;
   position: absolute;
   width: 24px;
 }
 
-.button:before {
-  border-top: 2px solid #c47135;
-  left: 0px;
-  top: -5px;
+.animated-border-button:before {
+  border-top: 2px solid #141414;
+  right: 0;
+  top: -4px;
 }
 
-.button:after {
-  border-bottom: 2px solid #c47135;
-  bottom: -5px;
-  right: 0px;
+.animated-border-button:after {
+  border-bottom: 2px solid #141414;
+  bottom: -4px;
+  left: 0;
 }
 
-.button:hover {
-  background-color: #c47135;
-}
-
-.button:hover:before,
-.button:hover:after {
-  height: 100%;
+.animated-border-button:hover:before,
+.animated-border-button:hover:after {
   width: 100%;
 }
 ```
-
-#### Explanation
-
-- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.
-
-#### Browser support
